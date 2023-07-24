@@ -1,0 +1,22 @@
+Open file grades.txt
+for eachLine get line 
+    split line to valuesArray
+    Output values[0] and "|"
+
+    for count in range values[1]
+        Output "*"
+    Output newline
+
+    bars = 10
+    min = 1
+    max = 100
+
+    divisions = max / bars
+
+    for each division
+        string = min + " " + divisions * numDivisions
+
+        for each key <= division * numDivisions
+            category  += item
+            for count in category
+                string += "*"
