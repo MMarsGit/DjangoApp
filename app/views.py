@@ -6,6 +6,9 @@ from django.conf import settings
 import os
 from collections import Counter
 
+from django.shortcuts import render
+from datetime import datetime
+
 def getHistograms(file):
     #Open File
     histogramFile = open(file, "r")
@@ -71,7 +74,14 @@ def getHistograms(file):
 def home(request):
     print(settings.BASE_DIR)
     string = getHistograms(os.path.join(settings.BASE_DIR, "Grades.txt"))
-    return HttpResponse(string, content_type="text/plain")
+    return render(
+        request,
+        'app/Hello.html',
+        {
+            'histogram': string,
+            'date': datetime.now()
+        }
+    )
 
 #Functions
 
