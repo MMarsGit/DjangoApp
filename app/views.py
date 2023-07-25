@@ -76,12 +76,17 @@ def home(request):
     string = getHistograms(os.path.join(settings.BASE_DIR, "Grades.txt"))
     return render(
         request,
-        'app/Hello.html',
+        'app/Home.html',
         {
             'histogram': string,
             'date': datetime.now()
         }
     )
 
+def about(request):
+    return render(request, "app/about.html")
+
+def contact(request):
+    return render(request, "app/contact.html")
 #Functions
 

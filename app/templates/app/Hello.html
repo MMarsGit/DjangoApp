@@ -3,9 +3,11 @@
     <head>
         <meta charset="utf-8" />
         <title>Hello, Django</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'app/site.css' %}" />
     </head>
     <body>
         It's {{ date | date:"l, d F, Y" }} at {{ date | time:"H:i:s" }}
-        <strong><pre>{{ histogram }}</pre></strong>
+        <span class="message"><pre>{{ histogram }}</pre></strong>
     </body>
 </html>
